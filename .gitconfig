@@ -1,0 +1,29 @@
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[user]
+	name = Stefano Cappa
+	email = stefano.cappa.ks89@gmail.com
+[core]
+	autocrlf = input
+	editor = subl -n -w
+[color]
+	ui = true
+[alias]
+	co = checkout
+	cob = checkout -b
+	bd = branch -d
+	cm = commit -m
+	c = commit
+	s = status
+	a = add
+	all = add -A
+	p = push
+	pom = push origin master
+	pum = push upstream master
+	poom = !git push origin master && git push upstream master
+	puum = !git push upstream master && git push origin master
+ 	r-- = reset --
+	rh = reset --hard
+	
