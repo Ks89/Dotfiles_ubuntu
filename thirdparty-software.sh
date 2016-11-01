@@ -25,7 +25,7 @@
 #ONLY FOR Ubuntu
 #DON'T EXECUTE THIS - BUT USE install.sh, please
 
-read -p "Would you install other softwares like Java? Press y or n: " -n 1 -r
+read -p "Would you install other softwares like Java, Chrome, Atom, MongoChef and so on? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -53,9 +53,9 @@ then
   if [[ $REPLY =~ ^[Yy]$ ]]
     then
       echo installing atom
-      wget -O atom-amd64.deb https://atom-installer.github.com/v1.11.2/atom-amd64.deb?s=1476745787&ext=.deb
-      sudo dpkg -i atom-amd64.deb?s=1476745787
-      rm -f atom-amd64.deb?s=1476745787
+      wget -O atom-amd64.deb https://atom-installer.github.com/v1.11.2/atom-amd64.deb
+      sudo dpkg -i atom-amd64.deb
+      rm -f atom-amd64.deb
   fi
   
   read -p "Would you install MongoChef? Press y or n: " -n 1 -r
@@ -63,8 +63,8 @@ then
   if [[ $REPLY =~ ^[Yy]$ ]]
     then
       echo installing mongochef
-      wget -O mongochef-linux-x64-dist.tar.gz https://cdn.3t.io/mongochef-core/linux/4.4.0/mongochef-linux-x64-dist.tar.gz
-      tar -xvzf mongochef-linux-x64-dist.tar.gz
+      wget -O mongochef-linux-x64-dist.tar.gz https://cdn.3t.io/mongochef-core/linux/4.4.0/mongochef-linux-x64-dist.tar.gz &&
+      tar -xvzf mongochef-linux-x64-dist.tar.gz &&
       sudo ./mongochef-4.4.0-linux-x64-dist/bin/mongochef.sh
   fi
   
