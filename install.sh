@@ -57,8 +57,8 @@ then
     tput setaf 6; echo "installing some global packages from npm"
     bash npm.sh
 
-    tput setaf 2; echo "source ~/.bash_profile called"
-    source ~/.bash_profile
+    tput setaf 2; echo "installing third party software"
+    bash thirdparty-software.sh
 
     tput setaf 3; echo "Thank u, bye bye!"
 fi

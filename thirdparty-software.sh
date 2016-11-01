@@ -29,14 +29,47 @@ read -p "Would you install other softwares like Java? Press y or n: " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo installing Oracle JRE 8
-  sudo add-apt-repository ppa:webupd8team/java
-  sudo apt-get update
-  sudo apt-get install oracle-java8-installer
-  sudo apt-get install oracle-java8-set-default
+  read -p "Would you install Oracle JRE 8? Press y or n: " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      echo installing Oracle JRE 8
+      sudo add-apt-repository ppa:webupd8team/java
+      sudo apt-get update
+      sudo apt-get install oracle-java8-installer
+      sudo apt-get install oracle-java8-set-default
+  fi
 
-  echo installing Google Chrome
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  sudo dpkg -i google-chrome-stable_current_amd64.deb
-  rm -f google-chrome-stable_current_amd64.deb
+  read -p "Would you install Chromium? Press y or n: " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      echo installing Chromium-browser
+      sudo apt-get install chromium-browser
+  fi
+
+  read -p "Would you install Atom? Press y or n: " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      echo installing atom
+      wget -O atom-amd64.deb https://atom-installer.github.com/v1.11.2/atom-amd64.deb?s=1476745787&ext=.deb
+      sudo dpkg -i atom-amd64.deb?s=1476745787
+      rm -f atom-amd64.deb?s=1476745787
+  fi
+  
+  read -p "Would you install MongoChef? Press y or n: " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      echo installing mongochef
+      wget -O mongochef-linux-x64-dist.tar.gz https://cdn.3t.io/mongochef-core/linux/4.4.0/mongochef-linux-x64-dist.tar.gz
+      tar -xvzf mongochef-linux-x64-dist.tar.gz
+      sudo ./mongochef-4.4.0-linux-x64-dist/bin/mongochef.sh
+  fi
+  
+
+
+
+
 fi
