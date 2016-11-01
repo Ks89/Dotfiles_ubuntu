@@ -45,7 +45,7 @@ then
   sudo cp /tmp/redis-stable/redis.conf /etc/redis
   sudo cp redis.conf /etc/redis/redis.conf
 
-  sudo nano /etc/systemd/system/redis.service
+  # sudo nano /etc/systemd/system/redis.service
 
   sudo cp redis.service /etc/systemd/system/redis.service
 
